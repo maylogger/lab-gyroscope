@@ -1,0 +1,6 @@
+/* Welcome to Compass. In this file you should write your main styles. (or centralize your imports) Import this file using the following HTML or equivalent: <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+html, body { height: 100%; }
+
+.box { position: relative; width: 120%; height: 120%; margin-top: -10%; margin-left: -10%; }
+
+.img { position: absolute; top: 0; left: 0; width: 120%; height: 120%; background: url(http://hhhhold.com/500x500) no-repeat; background-size: cover; -webkit-transform: perspective(0) translate(0, 0); -moz-transform: perspective(0) translate(0, 0); -ms-transform: perspective(0) translate(0, 0); -o-transform: perspective(0) translate(0, 0); transform: perspective(0) translate(0, 0); -webkit-transition: 0.1s linear; -moz-transition: 0.1s linear; -o-transition: 0.1s linear; transition: 0.1s linear; }
