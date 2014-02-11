@@ -1,22 +1,23 @@
+var rotateBox = document.querySelector('.box');
 function handleOrientation(event) {
-  var img = document.querySelector('.img');
-  var x = event.beta;  // In degree in the range [-180,180]
+
   var y = event.gamma; // In degree in the range [-90,90]
 
-  // Because we don't want to have the device upside down
-  // We constrain the x value to the range [-90,90]
-  if ( x >  90) { x =  90; }
-  if ( x < -90) { x = -90; }
-
   if(window.innerHeight > window.innerWidth){
-    img.style.webkitTransform = "translate(" + y + "px," + x + "px)";
-    img.style.MozTransform = "translate(" + y + "px," + x + "px)";
-    img.style.transform = "translate(" + y + "px," + x + "px)";
-  }
-  if(window.innerWidth > window.innerHeight){
-    img.style.webkitTransform = "translate(" + x + "px," + y + "px)";
-    img.style.MozTransform = "translate(" + x + "px," + y + "px)";
-    img.style.transform = "translate(" + x + "px," + y + "px)";
+
+    var rotateYdeg = -y / Math.PI;
+
+    var scaleSize = 320 / Math.cos( Math.abs( y/180 * Math.PI ) ) / 320;
+    // var scaleSize = 1;
+
+    if ( y > 0 ) {
+      // rotateBox.style.webkitTransformOrigin = "0% 50%";
+    } else {
+      // rotateBox.style.webkitTransformOrigin = "100% 50%";
+    }
+
+    rotateBox.style.webkitTransform = "rotateY(" + rotateYdeg + "deg) scaleX(" + scaleSize + ")";
+    // rotateBox.style.webkitTransform = "scaleX(" + scaleSize + ")";
   }
 }
 

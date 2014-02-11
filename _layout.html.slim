@@ -12,6 +12,5 @@ html lang="zh-TW"
   body
     = yield
     = javascript_include_tag \
-      "//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js", \
       "all"
     = livereload_js unless ENV["RACK_ENV"] == "production"

@@ -7,24 +7,19 @@
 
 html, body {
   height: 100%;
+  padding: 0;
+  margin: 0;
 }
-
+.stage {
+  margin: 0 -10px;
+  @include transform-style(preserve-3d);
+  @include perspective(700px);
+}
 .box {
-  position: relative;
-  width : 120%;
-  height: 120%;
-  margin-top: -10%;
-  margin-left: -10%;
-}
-
-.img {
-  position: absolute;
-  top   : 0;
-  left  : 0;
-  width : 120%;
-  height: 120%;
-  background: url(http://hhhhold.com/500x500) no-repeat;
-  background-size: cover;
-  @include translate(0, 0, 0);
-  @include transition(.1s linear); // .1s 一定要有才會順
+  background: red;
+  @include backface-visibility(hidden);
+  @include leader(8, 64px);
+  @include adjust-font-size-to(64px);
+  text-align: center;
+  @include transition(.07s linear);
 }
